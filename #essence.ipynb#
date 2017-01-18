@@ -1,0 +1,231 @@
+aa{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "TP1: Prise en main de IPython/NumPy/Pandas\n",
+    "=====\n",
+    "\n",
+    "Dans ce TP, nous allons prendre en main les outils qui nous serviront à l'implémentation de modèles d'apprentissage statistique (Réseaux de neurones profonds ou pas, SVM, ...). "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Nous allons commencer à jouer avec des données. Ici, nous ne ferons pas d'apprentissage, mais juste de l'analyse statistique assez simple. Le but étant de nous familiariser avec Python et avec ce fameux métier de \"Data Scientist\" dont une partie du boulot consiste en de l'exploration et de la compréhension des données."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Nous allons jouer avec le prix de l'essence dans les stations services de France en 2013 (source : opendata.gouv.fr)."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Chargons déjà le fichier CSV. Pour information, ce fichier a été créée à partir d'un fichier XML plus bordélique donné par le ministère. Le fichier d'origine a été préprocessé en PERL (mais d'autres langages pourraient être utilisés). Cette phase de preprocessing est nécessaire mais ne sera pas abordée ici."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [],
+   "source": [
+    "data=pd.DataFrame.from_csv(path=\"essence.csv\",sep=\"\\t\",infer_datetime_format=True,index_col=None)\n",
+    "data.tail()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [],
+   "source": [
+    "data.describe()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Exercice: Calculer le prix moyen du Gazole à Paris"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 29,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Exercice: Calculer le prix max des différentes essence en France ainsi que leurs positions"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 32,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Exercice: Trouver le jour ou le prix moyen de l'essence en France a été le plus cher."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 52,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Exercice: Dessiner le prix moyen des différentes essences"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 58,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Exercice: Dessiner le prix moyen de l'essence à Paris, Limoges et Bordeaux"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 62,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Exercice: Calculer le prix moyen de des différentes essences sur l'autoroute. Pour cela il faut utiliser l'opérateur \"contains\": voir http://stackoverflow.com/questions/11350770/pandas-dataframe-select-by-partial-string"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 89,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Exercice: La négation d'une colonne booléenne s'obtient à travers l'utilisation de np.invert(....). Calculer le prix moyen des différentes essences PAS sur les autoroutes"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 100,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Exercice: Maintenant, nous allons conserver uniquement le prix du gazole à Paris, et le moyenner sur toute l'année par station service"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 63,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Exercice: Maintenant, nous allons distinguer les stations dont le prix du gazole est supérieur à la moyenne et celle dont le prix est inférieur. Pour cela, il faut:\n",
+    "(i) Calculer le prix moyen (ii) Ajouter une colonne permettant de savoir si le prix est supérieur ou inférieur au prix moyen (iii) Dessiner -- voir : http://matplotlib.org/api/pyplot_api.html"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 83,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Exercice: Qu'en pensez vous ? Dessinez le prix moyen en fonction de la lattiude et en fonction de la longitude.... Ou faut-il mieux faire son plein d'essence ? "
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 2",
+   "language": "python",
+   "name": "python2"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 2
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython2",
+   "version": "2.7.9"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 0
+}
